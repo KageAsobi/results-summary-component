@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - [Solution](https://github.com/KageAsobi/results-summary-component)
-- [Live Site](https://kageasobi.github.io/results-summary-component/)
+- [Live Site](https://kageasobi.github.io/results-summary-component)
 
 ## My process
 

@@ -43,21 +43,21 @@ body {
   font-size: 18px;
 }
 
-article {
+main {
   display: grid;
   margin: auto;
   box-shadow: 0rem 1.5rem 1rem hsla(241deg, 100%, 89%, 0.1), 0rem 1.5rem 3.5rem hsl(221deg 100% 96%);
 }
 
 @media (max-width: 768px) {
-  article {
+  main {
     height: 100vh;
     max-width: 23.5rem;
   }
 }
 
 @media (min-width: 769px) {
-  article {
+  main {
     grid-template-columns: 1fr 1fr;
     max-width: 46.25rem;
     max-height: 32rem;
@@ -91,6 +91,20 @@ h2 {
   h2 {
     font-size: 1.125rem;
   }
+}
+
+.sr-only {
+	position: absolute;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	-webkit-clip-path: inset(50%);
 }
 
 #result, #summary {
