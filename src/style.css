@@ -1,4 +1,4 @@
-@supports not (font-variation-settings: "wdth") {
+@supports not (font-variation-settings: "wght") {
   @font-face {
     font-family: 'HankenGrotesk';
     font-weight: 500;
@@ -21,7 +21,7 @@
   }
 }
 
-@supports (font-variation-settings: "wdth") {
+@supports (font-variation-settings: "wght") {
   @font-face {
     font-family: 'HankenGrotesk';
     font-weight: 100 900;
