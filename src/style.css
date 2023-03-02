@@ -24,15 +24,29 @@
     src: url('/fonts/HankenGrotesk-VariableFont_wght.ttf') format('ttf') tech('variations'),
         url('/fonts/HankenGrotesk-VariableFont_wght.ttf') format('ttf supports variations'),
         url('/fonts/HankenGrotesk-VariableFont_wght.ttf') format('ttf-variations');
-    font-weight: 500 800;
-    font-stretch: 25% 151%;
+    font-weight: 100 900;
   }
 }
 
 :root {
-  --font-fallback: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-family: 'HankenGrotesk', var(--font-fallback);
-  background-color: hsl(0, 0%, 100%);
+  --white: 0, 0%, 100%;
+  --red: 0, 100%, 67%;
+  --orange: 39, 100%, 56%;
+  --green: 166, 100%, 37%;
+  --blue: 234, 85%, 45%;
+  --pale-blue: 221, 100%, 96%;
+  --violet-blue: 256, 72%, 46%;
+  --persian-blue: 241, 72%, 46%;
+  --dark-gray-blue: 224, 30%, 27%;
+  --light-lavender: 241, 100%, 89%;
+  --light-royal-blue: 241, 81%, 54%;
+  --light-slate-blue: 252, 100%, 67%;
+  --light-violet-blue: 228, 45%, 44%;
+  --light-blue-slate-to-royal: linear-gradient(hsl(var(--light-slate-blue)), hsl(var(--light-royal-blue)));
+  --primary-tint: 0.8;
+  --secondary-tint: 0.05;
+  font-family: 'HankenGrotesk', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: hsl(var(--white));
 }
 
 body {
@@ -46,7 +60,7 @@ body {
 main {
   display: grid;
   margin: auto;
-  box-shadow: 0rem 1.5rem 1rem hsla(241deg, 100%, 89%, 0.1), 0rem 1.5rem 3.5rem hsl(221deg 100% 96%);
+  box-shadow: 0rem 1.5rem 1rem hsla(var(--light-lavender), 0.1), 0rem 1.5rem 3.5rem hsl(var(--pale-blue));
 }
 
 @media (max-width: 768px) {
@@ -59,7 +73,7 @@ main {
 @media (min-width: 769px) {
   main {
     grid-template-columns: 1fr 1fr;
-    max-width: 46.25rem;
+    max-width: 45.875rem;
     max-height: 32rem;
     border-radius: 2rem;
   }
@@ -75,7 +89,7 @@ footer {
 }
 
 footer a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(var(--light-violet-blue));
 }
 
 h2, h3, p {
@@ -114,8 +128,8 @@ h2 {
 #result {
   border-radius: 2rem;
   text-align: center;
-  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-  color: hsl(241, 100%, 89%);
+  background: var(--light-blue-slate-to-royal);
+  color: hsl(var(--light-lavender));
 }
 
 @media (max-width: 768px) {
@@ -132,7 +146,7 @@ h2 {
   width: 12.125rem;
   height: 12.125rem;
   border-radius: 50%;
-  background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+  background: linear-gradient(hsla(var(--violet-blue), 1), hsla(var(--persian-blue), 0));
 }
 
 @media (max-width: 768px) {
@@ -166,7 +180,7 @@ h2 {
 }
 
 #result > div > p:first-child, #result h3 {
-  color: hsl(0, 0%, 100%);
+  color: hsl(var(--white));
 }
 
 #result > p {
@@ -181,7 +195,7 @@ h2 {
 }
 
 #summary {
-  color: hsl(224, 30%, 27%);
+  color: hsl(var(--dark-gray-blue));
 }
 
 @media (max-width: 768px) {
@@ -205,6 +219,8 @@ h2 {
   font-size: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
+  color: hsla(var(--accent), var(--primary-tint));
+  background-color: hsla(var(--accent), var(--secondary-tint));
 }
 
 @media (max-width: 768px) {
@@ -214,23 +230,19 @@ h2 {
 }
 
 #summary > div > .category.red {
-  color: hsla(0, 100%, 67%, 0.8);
-  background-color: hsla(0, 100%, 67%, 0.05);
+  --accent: var(--red);
 }
 
 #summary > div > .category.orange {
-  color: hsla(39, 100%, 56%, 0.8);
-  background-color: hsla(39, 100%, 56%, 0.05);
+  --accent: var(--orange);
 }
 
 #summary > div > .category.green {
-  color: hsla(166, 100%, 37%, 0.8);
-  background-color: hsla(166, 100%, 37%, 0.05);
+  --accent: var(--green);
 }
 
 #summary > div > .category.blue {
-  color: hsla(234, 85%, 45%, 0.8);
-  background-color: hsla(234, 85%, 45%, 0.05);
+  --accent: var(--blue);
 }
 
 #summary > div > .category > img {
@@ -257,8 +269,8 @@ h2 {
   outline: none;
   border: none;
   border-radius: 2rem;
-  color: hsl(221, 100%, 96%);
-  background-color: hsl(224, 30%, 27%);
+  color: hsl(var(--pale-blue));
+  background-color: hsl(var(--dark-gray-blue));
 }
 
 @media (max-width: 768px) {
@@ -268,5 +280,5 @@ h2 {
 }
 
 #summary button:hover, #summary button:active {
-  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  background: var(--light-blue-slate-to-royal);
 }
